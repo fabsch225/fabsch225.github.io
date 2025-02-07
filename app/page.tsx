@@ -18,7 +18,8 @@ import DefaultLayout from '@components/page/DefaultLayout';
 import Carousel, { CarouselHandle } from '@components/custom/Carousel';
 import { useEffect, useRef } from 'react';
 
-//cv link https://www.dropbox.com/scl/fi/4svfth7tnjq8iy7qqokn9/4.1-Go-Teil-1.pdf?rlkey=0pdza83rix2exbsf7fciph6df&st=ibl5sgou&dl=1
+//cv link 
+const cv_link = "https://www.dropbox.com/scl/fi/4an8ph14t0xsmdi0id2a3/cv-Fabian-Schuller.pdf?rlkey=1ccm13z8adnjol1vtzx8q9aou&st=4zivvvo4&dl=1";
 
 const ProjectCard = ({ title, children, githubLink = null, demoLink = null } : any) => (
   <div style={{ textAlign: 'justify' }}>
@@ -90,11 +91,11 @@ export default function Portfolio() {
         </Row>
         <Row>
           <br />
-          <Avatar src="/1710766869672_black.jpeg"/>
+          <Avatar src="/1710766869672_black.jpeg" href='mailto:fbn.schllr@gmail.com'/>
         </Row>
         <Row>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
-            <Button onClick={() => window.open('https://www.dropbox.com/scl/fi/4svfth7tnjq8iy7qqokn9/4.1-Go-Teil-1.pdf?rlkey=0pdza83rix2exbsf7fciph6df&st=ibl5sgou&dl=1')}>
+            <Button onClick={() => window.open(cv_link)}>
               Download CV
             </Button>
             <Button onClick={() => window.open('https://github.com/fabsch225')}>
