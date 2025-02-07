@@ -2,6 +2,8 @@
 
 import '@root/global.scss';
 
+import * as Utilities from '@common/utilities';
+
 import Accordion from '@components/Accordion';
 import ActionListItem from '@components/ActionListItem';
 import Avatar from '@components/Avatar';
@@ -42,9 +44,30 @@ const ProjectCard = ({ title, children, githubLink = null, demoLink = null } : a
   </div>
 );
 
+//Utilities.onHandleThemeChange('')
+//Utilities.onHandleThemeChange('theme-dark')
+
 export default function Portfolio() {
   const carouselRef = useRef<CarouselHandle>(null);
   
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    if (darkModeMediaQuery.matches) {
+      Utilities.onHandleThemeChange('theme-dark');
+    } else {
+      Utilities.onHandleThemeChange('');
+    }
+    const themeChangeHandler = (e: MediaQueryListEvent) => {
+      Utilities.onHandleThemeChange(e.matches ? 'theme-dark' : '');
+    };
+
+    darkModeMediaQuery.addEventListener('change', themeChangeHandler);
+    return () => {
+      darkModeMediaQuery.removeEventListener('change', themeChangeHandler);
+    };
+  }, []);
+
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
