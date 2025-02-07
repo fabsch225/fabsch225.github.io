@@ -13,7 +13,6 @@ node_modules
 dist
 out
 analytics.txt
-package-lock.json
 
 /**/*/.DS_STORE
 /**/*/node_modules
