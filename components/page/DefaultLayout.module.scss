@@ -2,8 +2,9 @@
   max-width: 80ch;
   align-items: center;
   margin: 0 auto;
-  flex: 1;
   flex-direction: column;
+  padding: 1rem;
+  width: 100%;
 }
 
 .body {
@@ -11,6 +12,28 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  
+  &::-webkit-scrollbar {     /* Chrome, Safari and Opera */
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    max-width: 95%;
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+    padding: 0.25rem;
+  }
 }
 
 .pixel {
@@ -19,4 +42,8 @@
   position: absolute;
   top: 0;
   width: 1px;
+  
+  @media (max-width: 768px) {
+    display: none; // Hide pixel on mobile if not needed
+  }
 }

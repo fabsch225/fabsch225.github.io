@@ -1,0 +1,11 @@
+.buttonStack {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+    }
+}

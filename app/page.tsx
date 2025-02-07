@@ -19,6 +19,7 @@ import DefaultLayout from '@components/page/DefaultLayout';
 
 import Carousel, { CarouselHandle } from '@components/custom/Carousel';
 import { useEffect, useRef } from 'react';
+import ButtonStack from '@root/components/custom/ButtonStack';
 
 //cv link 
 const cv_link = "https://www.dropbox.com/scl/fi/4an8ph14t0xsmdi0id2a3/cv-Fabian-Schuller.pdf?rlkey=1ccm13z8adnjol1vtzx8q9aou&st=4zivvvo4&dl=1";
@@ -96,7 +97,7 @@ export default function Portfolio() {
           <Avatar src="./1710766869672_black.jpeg" href='mailto:fbn.schllr@gmail.com'/>
         </Row>
         <Row>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
+        <ButtonStack>
             <Button onClick={() => window.open(cv_link)}>
               Download CV
             </Button>
@@ -106,7 +107,7 @@ export default function Portfolio() {
             <Button onClick={() => window.open('https://www.linkedin.com/in/fabian-schuller/')}>
               LinkedIn
             </Button>
-          </div>
+          </ButtonStack>
         </Row>
       </Grid>
       <Grid>
