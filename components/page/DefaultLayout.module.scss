@@ -1,5 +1,16 @@
-.body {
+.container {
   max-width: 80ch;
+  align-items: center;
+  margin: 0 auto;
+  flex: 1;
+  flex-direction: column;
+}
+
+.body {
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .pixel {
