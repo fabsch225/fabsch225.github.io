@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, forwardRef, useImperativeHandle, ReactNode } from 'react';
 import styles from '@components/custom/Carousel.module.scss';
 import ActionButton from '../ActionButton';

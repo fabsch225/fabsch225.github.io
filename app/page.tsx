@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-static'
+
 import '@root/global.scss';
 
 import * as Utilities from '@common/utilities';

@@ -1,3 +1,5 @@
+'use client';
+
 import styles from '@components/custom/Footer.module.scss';
 
 const Footer = () => (
