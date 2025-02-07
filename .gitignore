@@ -12,7 +12,7 @@ yarn.lock
 node_modules
 dist
 out
-analytics.txt
+analytics.txt   
 
 /**/*/.DS_STORE
 /**/*/node_modules

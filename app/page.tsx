@@ -93,7 +93,7 @@ export default function Portfolio() {
         </Row>
         <Row>
           <br />
-          <Avatar src="/1710766869672_black.jpeg" href='mailto:fbn.schllr@gmail.com'/>
+          <Avatar src="./1710766869672_black.jpeg" href='mailto:fbn.schllr@gmail.com'/>
         </Row>
         <Row>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
