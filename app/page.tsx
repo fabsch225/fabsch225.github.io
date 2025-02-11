@@ -177,6 +177,17 @@ export default function Portfolio() {
       </Grid>
       <Carousel ref={carouselRef} >
       <ProjectCard 
+          title="SQLite Clone"
+          githubLink="https://github.com/fabsch225/rustql"
+          CarouselKey="rustsql"
+        >
+          During a Course on Databases, i got interested in the "internals" of
+          relational Databases, like Query-Planning and
+          Transaction-Management. Therefore i started implementing a
+          rudimentary SQLite-Clone in Rust. The Database supports CRUD querys
+          and transactions, indices, views and permanent storage on disk. The architecte is strongly inspired by SQLite.
+        </ProjectCard>
+      <ProjectCard 
           title="3D Graphics Engine"
           githubLink="https://github.com/fabsch225/rust3d"
           demoLink="#"
@@ -206,18 +217,6 @@ export default function Portfolio() {
           Labyrinths and Collectible Coins. The Project is meant as a Proof of
           Concept for VR / External Interaction and was developed with fellow
           Students for Uni.
-        </ProjectCard>
-
-        <ProjectCard 
-          title="SQLite Clone"
-          githubLink="https://github.com/fabsch225/rustql"
-          CarouselKey="rustsql"
-        >
-          During a Course on Databases, i got interested in the "internals" of
-          relational Databases, like Query-Planning and
-          Transaction-Management. Therefore i started implementing a
-          rudimentary SQLite-Clone in Rust. The Database supports CRUD Querys
-          and Transactions. 
         </ProjectCard>
 
         <ProjectCard 
