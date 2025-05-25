@@ -276,11 +276,12 @@ File on Disk`}
           demoLink="https://fabsch225.itch.io/overnight-odyssey"
           CarouselKey="video-games-ds2d"
         >
-          Overnight Odyssey is a 2D adventure game inspired by Dark Souls. The
+          <p>Overnight Odyssey is a 2D adventure game inspired by Dark Souls. The
           player fights various monsters and can customize their character.
           The Game can be finished in 3-4 hours (therefore the name), but is
           rather difficult. It runs on Windows, Linux and Mac, as well as in
-          the browser.
+          the browser.</p><br/>
+          <iframe frameBorder="0" src="https://itch.io/embed/1429619" width="552" height="167"><a href="https://fabsch225.itch.io/overnight-odyssey">Overnight Odyssey by fabsch225</a></iframe>
         </ProjectCard>
         <ProjectCard 
           title="Project Extinction"
