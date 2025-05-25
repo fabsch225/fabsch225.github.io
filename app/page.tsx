@@ -209,7 +209,7 @@ File on Disk`}
         <Accordion title="Javascript Visualizer">
           <ProjectCard
             title="Javascript Visualizer"
-            demoLink="#"
+            demoLink="https://fabsch225.github.io/Nassi-Shneiderman-Compiler/"
             CarouselKey="js-nsd"
           >
             This is a tool which takes in JS, and then creates a Nassi
