@@ -212,7 +212,7 @@ File on Disk`}
               title="Advent of Code 2023: Trying new Languages"
               CarouselKey="aoc2023"
             >
-              In 2023, i participated in the <a href="https://adventofcode.com/2023">Advent of Code</a> using a variety of programming languages.
+              In 2023, i participated in the <a href="https://adventofcode.com/2023">Advent of Code</a>.
               The goal was to use a different language for each day, to learn new languages and paradigms.
               This prooved too time consuming, and i only made it to Day 10.
             </ProjectCard>
@@ -225,7 +225,7 @@ File on Disk`}
               githubLink="https://github.com/fabsch225/AOC24"
               CarouselKey="aoc2024"
             >
-              This is my solution to the <a href="https://adventofcode.com/2024">Advent of Code 2024</a> in C++. 
+              This is my complete solution to the <a href="https://adventofcode.com/2024">Advent of Code 2024</a> in C++. 
               The code is written in a functional style, using the STL and some custom algorithms.
               In this semester i took a course on C++ in University. This prooved to be a valuable practise for the practical exam, which i passed with a perfect score.
             </ProjectCard>
