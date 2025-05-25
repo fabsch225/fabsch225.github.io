@@ -21,11 +21,11 @@
   cursor: pointer;
   transition: 200ms ease all;
   transition-property: padding;
-  padding-left: 0ch;
+  padding-left: 1ch;
 }
 
 .active {
   .content {
-    padding-left: 1ch;
+    padding-left: 2ch;
   }
 }

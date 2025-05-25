@@ -42,3 +42,19 @@
     min-width: 100%;
     padding: 0 1rem;
   }
+  
+  .pixelated .carouselTrack {
+    transition: none;
+    animation: pixelateInOut 0.5s;
+  }
+  
+  @keyframes pixelateInOut {
+    0%, 100% {
+      filter: contrast(200%) brightness(50%) saturate(0%) blur(2px);
+      transform: scale(1.1);
+    }
+    50% {
+      filter: none;
+      transform: scale(1);
+    }
+  }

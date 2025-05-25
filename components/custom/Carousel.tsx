@@ -10,6 +10,7 @@ export interface CarouselHandle {
 
 interface CarouselProps {
     children: ReactNode[];
+    pixelatedAnimation?: boolean;
 }
 
 interface CarouselChildProps {
@@ -17,7 +18,7 @@ interface CarouselChildProps {
     children: ReactNode;
 }
 
-const Carousel = forwardRef<CarouselHandle, CarouselProps>(({ children }, ref) => {
+const Carousel = forwardRef<CarouselHandle, CarouselProps>(({ children, pixelatedAnimation = false }, ref) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [touchStart, setTouchStart] = useState(0);
 
@@ -57,14 +58,13 @@ const Carousel = forwardRef<CarouselHandle, CarouselProps>(({ children }, ref) =
             else prev();
         }
     };
+    
 
     return (
         <div>
-        <ActionButton hotkey="<-" onClick={prev}>Prev</ActionButton>
-        <ActionButton hotkey="->" onClick={next}>Next</ActionButton>
-        <label>     Navigate with the arrows, or use the index above</label>    
+        
         <br/><br/>
-        <div className={styles.carouselContainer}>
+        <div className={`${styles.carouselContainer}`}>
             <div
                 className={styles.carouselTrack}
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}

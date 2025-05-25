@@ -11,9 +11,10 @@ interface AccordionProps {
   defaultValue?: boolean;
   title: string;
   children?: React.ReactNode;
+  tabbed?: boolean;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ defaultValue = false, title, children }) => {
+const Accordion: React.FC<AccordionProps> = ({ defaultValue = false, title, children, tabbed = false }) => {
   const [show, setShow] = React.useState<boolean>(defaultValue);
   const accordionRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -24,7 +25,7 @@ const Accordion: React.FC<AccordionProps> = ({ defaultValue = false, title, chil
   return (
     <>
       <Row ref={accordionRef} tabIndex={0} role="button" onClick={toggleShow} aria-expanded={show}>
-        <div className={Utilities.classNames(styles.flex, show ? styles.active : undefined)}>
+        <div style={{ paddingLeft: tabbed ? '4ch' : '0ch'}} className={Utilities.classNames(styles.flex, show ? styles.active : undefined)}>
           <span className={styles.icon}>{show ? '▾' : '▸'}</span>
           <span className={styles.content}>{title}</span>
         </div>
