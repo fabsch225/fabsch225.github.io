@@ -64,6 +64,19 @@ export default function Portfolio() {
   const [openAccordions, setOpenAccordions] = useState<number>(0);
 
   useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    if (darkModeMediaQuery.matches) {
+      Utilities.onHandleThemeChange('theme-dark');
+    } else {
+      Utilities.onHandleThemeChange('');
+    }
+    const themeChangeHandler = (e: MediaQueryListEvent) => {
+      Utilities.onHandleThemeChange(e.matches ? 'theme-dark' : '');
+    };
+
+    darkModeMediaQuery.addEventListener('change', themeChangeHandler);
+
     const countAccordions = () => {
       const accordions = document.querySelectorAll('[aria-expanded="true"]');
       setOpenAccordions(accordions.length);
@@ -79,7 +92,11 @@ export default function Portfolio() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('click', countAccordions);
+      darkModeMediaQuery.removeEventListener('change', themeChangeHandler);
+      window.removeEventListener('scroll', handleScroll)
+    };
   }, []);
 
 
