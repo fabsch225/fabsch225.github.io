@@ -106,6 +106,7 @@ export default function Portfolio() {
         <Row>
           <h1>Fabian Alexander Schuller</h1>
           <Text>Student of Mathematics & Computer Science</Text>
+          <h1>Personal Projects</h1>
         </Row>
         <Row>
           <br />
@@ -218,8 +219,6 @@ File on Disk`}
           </ProjectCard>
         </Accordion>
 
-
-
         <Accordion title="Leela Chess 0 Microservice">
           <ProjectCard
             title="LeelaDocker"
@@ -231,8 +230,6 @@ File on Disk`}
             not included. A Nvidia GPU with PCI Passthrough is required to run the Docker Image. WSL2 works also.
           </ProjectCard>
         </Accordion>
-
-
 
         <Accordion title="Oauth Client from Scratch">
           <ProjectCard
@@ -246,7 +243,6 @@ File on Disk`}
           </ProjectCard>
         </Accordion>
 
-
         <Accordion title="Advent of Code">
           <ProjectCard
             title="Advent of Code"
@@ -259,7 +255,6 @@ File on Disk`}
           </ProjectCard>
         </Accordion>
 
-
         <Accordion title="Advent of Code 2023" tabbed={true}>
           <ProjectCard
             title="Advent of Code 2023: Trying new Languages"
@@ -270,7 +265,6 @@ File on Disk`}
             This prooved too time consuming, and i only made it to Day 10.
           </ProjectCard>
         </Accordion>
-
 
         <Accordion title="Advent of Code 2024 in C++" tabbed={true}>
           <ProjectCard
@@ -283,7 +277,6 @@ File on Disk`}
             In this semester i took a course on C++ in University. This was valuable practise for the practical exam, which i passed with a perfect score.
           </ProjectCard>
         </Accordion>
-
 
         <Accordion title="Video Games">
           <ProjectCard
@@ -312,7 +305,6 @@ File on Disk`}
           </ProjectCard>
         </Accordion>
 
-
         <Accordion title="Project Extinction" tabbed={true}>
           <ProjectCard
             title="Project Extinction"
@@ -323,7 +315,6 @@ File on Disk`}
             in an hour.
           </ProjectCard>
         </Accordion>
-
 
         <Accordion title="HNoir" tabbed={true}>
           <ProjectCard
@@ -353,7 +344,6 @@ File on Disk`}
             <p>I used technology like Pygame, p5.js, p5 (java) and the Godot game engine</p>
           </ProjectCard>
         </Accordion>
-
       </ul>
     </DefaultLayout>
   );
