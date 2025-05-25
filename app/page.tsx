@@ -20,14 +20,16 @@ import DefaultLayout from '@components/page/DefaultLayout';
 import Carousel, { CarouselHandle } from '@components/custom/Carousel';
 import { useEffect, useRef } from 'react';
 import ButtonStack from '@root/components/custom/ButtonStack';
+import CodeBlock from '@root/components/CodeBlock';
 
 //cv link 
-const cv_link = "https://www.dropbox.com/scl/fi/4an8ph14t0xsmdi0id2a3/cv-Fabian-Schuller.pdf?rlkey=1ccm13z8adnjol1vtzx8q9aou&st=4zivvvo4&dl=1";
+const cv_link = "https://www.dropbox.com/scl/fi/d2n5jp95o7r18hlbfdh4j/FabianSchuller_CV.pdf?rlkey=ikdw1b72yz7qvn4i1ujj9yzpp&dl=1";
 
 const ProjectCard = ({ title, children, githubLink = null, demoLink = null } : any) => (
   <div style={{ textAlign: 'justify' }}>
   <Card title={title}>
-    <p>{children}</p>
+    {children}
+    <br></br>
     {githubLink && <br />}
     {githubLink && (
       <Row>
@@ -120,6 +122,11 @@ export default function Portfolio() {
           <br />
             <ol>
               <ListItem>
+                <a href="#rustsql">
+                SQLite Clone
+                </a>
+              </ListItem>
+              <ListItem>
                 <a href="#rust-3d">
                  3D Graphics Engine
                 </a>
@@ -127,11 +134,6 @@ export default function Portfolio() {
               <ListItem>
                 <a href="#unity-vr">
                 Unity: Visualizing Architectural Plans
-                </a>
-              </ListItem>
-              <ListItem>
-                <a href="#rustsql">
-                SQLite Clone
                 </a>
               </ListItem>
               <ListItem>
@@ -185,7 +187,19 @@ export default function Portfolio() {
           relational Databases, like Query-Planning and
           Transaction-Management. Therefore i started implementing a
           rudimentary SQLite-Clone in Rust. The Database supports CRUD querys
-          and transactions, indices, views and permanent storage on disk. The architecte is strongly inspired by SQLite.
+          and transactions, indices, views and permanent storage on disk. The architecture is strongly inspired by SQLite, for example
+          the Database is stored in a single file, and the Schema is stored in a System-Table. <br/>
+          Components:
+          <br/>
+          <CodeBlock>
+              {`IO in/out
+Parser -> Planner -> Executor
+B-Tree
+PagerFrontend <-> PagerAccessor <-> PagerCore
+File on Disk`}
+          </CodeBlock>
+          <br/>
+          The project is still in development and can be found on GitHub.
         </ProjectCard>
       <ProjectCard 
           title="3D Graphics Engine"

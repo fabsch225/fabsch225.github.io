@@ -59,6 +59,11 @@ const Carousel = forwardRef<CarouselHandle, CarouselProps>(({ children }, ref) =
     };
 
     return (
+        <div>
+        <ActionButton hotkey="<-" onClick={prev}>Prev</ActionButton>
+        <ActionButton hotkey="->" onClick={next}>Next</ActionButton>
+        <label>     Navigate with the arrows, or use the index above</label>    
+        <br/><br/>
         <div className={styles.carouselContainer}>
             <div
                 className={styles.carouselTrack}
@@ -73,8 +78,6 @@ const Carousel = forwardRef<CarouselHandle, CarouselProps>(({ children }, ref) =
                 ))}
             </div>
         
-            <ActionButton hotkey="<-" onClick={prev}>Prev</ActionButton>
-            <ActionButton hotkey="->" onClick={next}>Next</ActionButton>
 
             <div className={styles.dots}>
                 {children.map((child, index) => (
@@ -85,6 +88,7 @@ const Carousel = forwardRef<CarouselHandle, CarouselProps>(({ children }, ref) =
                     />
                 ))}
             </div>
+        </div>
         </div>
     );
 });
