@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-.content {
+.title {
   min-width: 10%;
   width: 100%;
   user-select: none;
@@ -24,8 +24,24 @@
   padding-left: 1ch;
 }
 
+.content {
+  padding: 0 1ch;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+  transition: all;
+}
+
+
 .active {
-  .content {
+  .title {
     padding-left: 2ch;
   }
 }
+
+
