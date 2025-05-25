@@ -23,7 +23,7 @@ import ButtonStack from '@root/components/custom/ButtonStack';
 import CodeBlock from '@root/components/CodeBlock';
 
 //cv link 
-const cv_link = "https://www.dropbox.com/scl/fi/d2n5jp95o7r18hlbfdh4j/FabianSchuller_CV.pdf?rlkey=ikdw1b72yz7qvn4i1ujj9yzpp&dl=1";
+const cv_link = "https://www.dropbox.com/scl/fi/twqhfmvko3bfpqoz6j3zl/FabianSchuller_CV_rev1.pdf?rlkey=ijsu5vnqchbpkpf6kbsd3fbqr&dl=1";
 
 const ProjectCard = ({ title, children, githubLink = null, demoLink = null } : any) => (
   <div style={{ textAlign: 'justify' }}>
