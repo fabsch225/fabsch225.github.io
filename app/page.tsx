@@ -204,8 +204,6 @@ File on Disk`}
           </ProjectCard>
         </Accordion>
 
-
-
         <Accordion title="Javascript Visualizer">
           <ProjectCard
             title="Javascript Visualizer"
@@ -230,7 +228,7 @@ File on Disk`}
           >
             This is a Docker Image, which runs Google's Lc0 Chess Engine. It
             exposes a Websocket to access the Chess-Engine using the Universal Chess Interface. A Loadbalancer is
-            not included.
+            not included. A Nvidia GPU with PCI Passthrough is required to run the Docker Image. WSL2 works also.
           </ProjectCard>
         </Accordion>
 
