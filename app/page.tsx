@@ -282,7 +282,7 @@ File on Disk`}
           >
             This is my complete solution to the <a href="https://adventofcode.com/2024">Advent of Code 2024</a> in C++.
             The code is written in a functional style, using the STL and some custom algorithms.
-            In this semester i took a course on C++ in University. This prooved to be a valuable practise for the practical exam, which i passed with a perfect score.
+            In this semester i took a course on C++ in University. This was valuable practise for the practical exam, which i passed with a perfect score.
           </ProjectCard>
         </Accordion>
 
@@ -334,6 +334,25 @@ File on Disk`}
             CarouselKey="video-games-hnoir"
           >
             This is a Topdown-Shooter / Detective Game inspired by Hotline Miami.
+          </ProjectCard>
+        </Accordion>
+
+        <Accordion title="Others" tabbed={true}>
+          <ProjectCard
+            title="Others"
+            CarouselKey="video-games-others"
+          >
+            <p>Other (earlier) Games include Clones of</p>
+            <ul>
+              <li>Asteroids</li>
+              <li>Space Invaders</li>
+              <li>Flappy Bird</li>
+              <li>2048</li>
+              <li>Pacman</li>
+              <li><a href="https://play.google.com/store/apps/details?id=com.ChillyRoom.DungeonShooter&hl=en">Soul Knight</a></li>
+              <li>Geometry Dash</li>
+            </ul>
+            <p>I used technology like Pygame, p5.js, p5 (java) and the Godot game engine</p>
           </ProjectCard>
         </Accordion>
 
