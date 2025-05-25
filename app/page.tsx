@@ -118,7 +118,7 @@ export default function Portfolio() {
       <p> Below you find some Programming Projects, some of which i did in University, some in Grammar School. 
       </p>
       </Row>
-      <Accordion defaultValue={false} title="INDEX">
+      <Accordion defaultValue={true} title="INDEX">
           <br />
             <ol>
               <ListItem>
