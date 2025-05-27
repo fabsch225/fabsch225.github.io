@@ -14,6 +14,9 @@ import Card from '@components/Card';
 import Grid from '@components/Grid';
 import ListItem from '@components/ListItem';
 import Row from '@components/Row';
+import Table from '@root/components/Table';
+import TableColumn from '@root/components/TableColumn';
+import TableRow from '@root/components/TableRow';
 import Text from '@components/Text';
 import DefaultLayout from '@components/page/DefaultLayout';
 
@@ -52,9 +55,9 @@ const ProjectCard = ({ title, children, githubLink = null, demoLink = null }: an
 
 function closeAllAccordions() {
   const accordions = document.querySelectorAll('[aria-expanded="true"]');
-      accordions.forEach((accordion) => {
-        (accordion as HTMLElement).click();
-      });
+  accordions.forEach((accordion) => {
+    (accordion as HTMLElement).click();
+  });
 }
 
 //Utilities.onHandleThemeChange('')
@@ -104,12 +107,19 @@ export default function Portfolio() {
     <DefaultLayout previewPixelSRC="null">
       <Grid>
         <Row>
-          <h1>Fabian Alexander Schuller</h1>
-          <Text>Student of Mathematics & Computer Science</Text>
-        </Row>
-        <Row>
-          <br />
-          <Avatar src="./1710766869672_black.jpeg" href='mailto:fbn.schllr@gmail.com' />
+          <Table>
+            <TableColumn>
+              <TableRow>
+                <Avatar src="./1710766869672_black.jpeg" href='mailto:fbn.schllr@gmail.com' />
+              </TableRow>
+            </TableColumn>
+            <TableColumn>
+              <TableRow>
+                <h1>Fabian Alexander Schuller</h1>
+              </TableRow>
+            </TableColumn>
+          </Table>
+          <Text>Student of Mathematics & Computer Science.</Text>
         </Row>
         <Row>
           <ButtonStack>
@@ -124,9 +134,7 @@ export default function Portfolio() {
             </Button>
           </ButtonStack>
         </Row>
-        <Row>
-          <h1>Personal Projects</h1>
-        </Row>
+        <Row><br/><Text>Below there are programming projects i undertook during secondary school and uni.</Text></Row>
       </Grid>
       {openAccordions >= 2 && (
         <Button
@@ -239,9 +247,12 @@ File on Disk`}
             githubLink="https://github.com/fabsch225/OAuth-Client-in-GO"
             CarouselKey="oauth"
           >
-            This is a simple Oauth Client in Go. This was a demonstration for an accompanying
-            seminar presentation on the OAuth2.0 Protocol. There is an example setup using a local Authentik instance
-            and a note-taking app, which uses the Oauth Client to authenticate users.
+            This is a simple Oauth Client in written Go. This was a demonstration for an accompanying
+            seminar presentation on the OAuth2.0 Protocol. I followed a microservice architecture, in so far as 
+            we seperate the buisness logic and the interface to an identity server (for example Authentik).
+            In the repo, an example setup is included using Docker Compose.
+            As per the microservice architecture, there are 3 components: Authentik, the Oauth client,
+            and a generic note-taking app.
           </ProjectCard>
         </Accordion>
 
