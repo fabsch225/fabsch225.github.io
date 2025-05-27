@@ -106,7 +106,6 @@ export default function Portfolio() {
         <Row>
           <h1>Fabian Alexander Schuller</h1>
           <Text>Student of Mathematics & Computer Science</Text>
-          <h1>Personal Projects</h1>
         </Row>
         <Row>
           <br />
@@ -124,6 +123,9 @@ export default function Portfolio() {
               LinkedIn
             </Button>
           </ButtonStack>
+        </Row>
+        <Row>
+          <h1>Personal Projects</h1>
         </Row>
       </Grid>
       {openAccordions >= 2 && (
