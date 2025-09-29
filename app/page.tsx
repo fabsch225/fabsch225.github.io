@@ -134,7 +134,7 @@ export default function Portfolio() {
             </Button>
           </ButtonStack>
         </Row>
-        <Row><br/><Text>Below there are programming projects i undertook during secondary school and uni.</Text></Row>
+        <Row><br/><Text>Below there are hobbyist programming projects i undertook during secondary school and uni.</Text></Row>
       </Grid>
       {openAccordions >= 2 && (
         <Button
