@@ -184,14 +184,12 @@ File on Disk`}
           <ProjectCard
             title="3D Graphics Engine"
             githubLink="https://github.com/fabsch225/rust3d"
-            demoLink="#"
           >
             This is a CPU-based Graphics Engine in memory-safe Rust. It supports
             both rasterization and raymarching. It is programmed in a modular
             way and is object oriented. One can load 3D models from .obj files
             and apply textures to them. Both multithreaded rendering and
-            rendering at a fixed framerate is supported. The Engine can be
-            compiled to WebAssembly and run in the browser. The project is still
+            rendering at a fixed framerate is supported. The project is still
             in development and can be found on GitHub.
           </ProjectCard>
         </Accordion>
@@ -321,7 +319,7 @@ File on Disk`}
         <Accordion title="Project Extinction" tabbed={true}>
           <ProjectCard
             title="Project Extinction"
-            githubLink="https://github.com/fabsch225/Godot_Doom"
+            demoLink="https://fabsch225.itch.io/project-exctinction"
             CarouselKey="video-games-doom"
           >
             This is a doom-clone, set in a zombie apocalypse. It can be finished
@@ -332,7 +330,6 @@ File on Disk`}
         <Accordion title="HNoir" tabbed={true}>
           <ProjectCard
             title="HNoir"
-            githubLink="https://github.com/fabsch225/HotlineNoir"
             CarouselKey="video-games-hnoir"
           >
             This is a Topdown-Shooter / Detective Game inspired by Hotline Miami.
