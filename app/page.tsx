@@ -32,7 +32,7 @@ const ProjectCard = ({ title, children, githubLink = null, demoLink = null }: an
     <Card>
       {children}
       <br></br>
-      {githubLink && <br />}
+      {(githubLink || demoLink) && <br />}
       {githubLink && (
         <Row>
           <ActionListItem icon={'->'} href={githubLink} target="_blank">
