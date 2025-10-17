@@ -28,8 +28,8 @@ import CodeBlock from '@root/components/CodeBlock';
 const cv_link = "https://www.dropbox.com/scl/fo/412zx36yzivnz03928t6h/AAUFRQ-MKoDo_CkxZYf3y4c?rlkey=l4b0r5mmzfr0p1mqqurx8jhkr&st=dlfpkqb0&dl=1";
 
 const ProjectCard = ({ title, children, githubLink = null, demoLink = null }: any) => (
-  <div style={{ textAlign: 'justify', marginTop: '1ch' }}>
-    <Card>
+  <div style={{  marginTop: '1ch' }}>
+    <Card style={{ textAlign: 'justify' }} title={title}>
       {children}
       <br></br>
       {(githubLink || demoLink) && <br />}
