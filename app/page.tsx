@@ -322,8 +322,10 @@ File on Disk`}
             demoLink="https://fabsch225.itch.io/project-exctinction"
             CarouselKey="video-games-doom"
           >
-            This is a doom-clone, set in a zombie apocalypse. It can be finished
-            in an hour.
+            <p>This is a doom-clone, set in a zombie apocalypse. It can be finished
+            in an hour.</p> <br />
+
+            <iframe frameborder="0" src="https://itch.io/embed/2089147" width="552" height="167"><a href="https://fabsch225.itch.io/project-exctinction">Project Exctinction by fabsch225</a></iframe>
           </ProjectCard>
         </Accordion>
 
