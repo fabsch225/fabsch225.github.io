@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Fabian Schuller</title>
+      <link>https://fabsch225.github.io</link>
+      <description>Last 10 notes on Fabian Schuller</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Animating a double pendulum</title>
+    <link>https://fabsch225.github.io/Animating-a-double-pendulum</link>
+    <guid>https://fabsch225.github.io/Animating-a-double-pendulum</guid>
+    <description>Physics of double pendulums Simulating a double pendulum involves solving its equations of motion, which are derived from Lagrangian mechanics.</description>
+    <pubDate>Thu, 23 Oct 2025 19:00:13 GMT</pubDate>
+  </item><item>
+    <title>Paradoxes and Limits</title>
+    <link>https://fabsch225.github.io/Paradoxes-and-Limits</link>
+    <guid>https://fabsch225.github.io/Paradoxes-and-Limits</guid>
+    <description>Mathematics is full of puzzles that appear contradictory at first sight. Often, the resolution comes from taking a closer look at how limits work.</description>
+    <pubDate>Thu, 23 Oct 2025 19:00:13 GMT</pubDate>
+  </item><item>
+    <title>How to setup a blog for free</title>
+    <link>https://fabsch225.github.io/How-to-setup-a-blog-for-free</link>
+    <guid>https://fabsch225.github.io/How-to-setup-a-blog-for-free</guid>
+    <description>Introduction This is how I set up this Blog, free of charge. All you need is a markdown editor, in my case Obsidian, and a Github account.</description>
+    <pubDate>Tue, 17 Jun 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Hello World</title>
+    <link>https://fabsch225.github.io/Hello-World</link>
+    <guid>https://fabsch225.github.io/Hello-World</guid>
+    <description>My Intentions During my Studies at University, at my Job as a Programmer, or during personal projects, I often come across topics / problems / solutions worth sharing.</description>
+    <pubDate>Mon, 16 Jun 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Home</title>
+    <link>https://fabsch225.github.io/</link>
+    <guid>https://fabsch225.github.io/</guid>
+    <description>Welcome to my Blog. This is very much WIP.</description>
+    <pubDate>Mon, 16 Jun 2025 00:00:00 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
