@@ -134,8 +134,9 @@ export default function Portfolio() {
             </Button>
           </ButtonStack>
         </Row>
-        <Row><br/><Text>Below there are hobbyist programming projects I undertook during secondary school and uni. For professional projects, please refer to my CV.</Text></Row>
+        <Row><br/><Text>Below there are hobbyist programming projects I undertook during secondary school and uni. For professional experience, please refer to my CV.</Text></Row>
       </Grid>
+      <Grid>
       {openAccordions >= 2 && (
         <Button
           id="close-all-button"
@@ -155,19 +156,18 @@ export default function Portfolio() {
           Close All
         </Button>
       )}
-      <ul>
         <Accordion title="SQLite Clone">
           <ProjectCard
             title="SQLite Clone"
             githubLink="https://github.com/fabsch225/rustql"
           >
-            During a Course on Databases, I got interested in the "internals" of
+            <p>During a Course on Databases, I got interested in the "internals" of
             relational databases, like query-planning and
             transaction-management. Therefore I started implementing a
             rudimentary SQLite-clone in Rust. The database supports CRUD queries
             and transactions, indices, views and permanent storage on disk. The architecture is strongly inspired by SQLite, for example
             the database is stored in a single file, and the schema is stored in a system-table. <br />
-            Components:
+            Components:</p>
             <br />
             <CodeBlock>
               {`IO in/out
@@ -354,7 +354,7 @@ File on Disk`}
             <p>I used technology like Pygame, p5.js, p5 (java) and the Godot game engine</p>
           </ProjectCard>
         </Accordion>
-      </ul>
+      </Grid>
     </DefaultLayout>
   );
 }
