@@ -162,11 +162,11 @@ export default function Portfolio() {
             githubLink="https://github.com/fabsch225/rustql"
           >
             During a Course on Databases, I got interested in the "internals" of
-            relational Databases, like Query-Planning and
-            Transaction-Management. Therefore I started implementing a
-            rudimentary SQLite-Clone in Rust. The Database supports CRUD queries
+            relational databases, like query-planning and
+            transaction-management. Therefore I started implementing a
+            rudimentary SQLite-clone in Rust. The database supports CRUD queries
             and transactions, indices, views and permanent storage on disk. The architecture is strongly inspired by SQLite, for example
-            the Database is stored in a single file, and the Schema is stored in a System-Table. <br />
+            the database is stored in a single file, and the schema is stored in a system-table. <br />
             Components:
             <br />
             <CodeBlock>
@@ -185,7 +185,7 @@ File on Disk`}
             title="3D Graphics Engine"
             githubLink="https://github.com/fabsch225/rust3d"
           >
-            This is a CPU-based Graphics Engine in memory-safe Rust. It supports
+            This is a CPU-based graphics engine in memory-safe Rust. It supports
             both rasterization and raymarching. It is programmed in a modular
             way and is object oriented. One can load 3D models from .obj files
             and apply textures to them. Both multithreaded rendering and
@@ -199,17 +199,17 @@ File on Disk`}
             title="Architecture in VR"
             CarouselKey="unity-vr"
           >
-            The Goal of the Project is to visualize architectural plans in
-            Virtual Reality. Instead of implementing an Api to "real"
-            architectural software, the project uses an Web-Editor to create the
-            plans. The Tech-Stack consists of Unity Engine and Nuxt. Nuxt both
-            serves as the Web-Editor and the Backend. The Plans are loaded using
-            a Rest-Api, and a Websocket is used to communicate updates to the
-            Unity-Client, so changes are reflected in real-time. Some
-            Gamification is implemented, for Example Procedurally Generated
-            Labyrinths and Collectible Coins. The Project is meant as a Proof of
-            Concept for VR / External Interaction and was developed with fellow
-            Students for Uni.
+            The goal of the project is to visualize architectural plans in
+            Virtual Reality. Instead of implementing an API to "real"
+            architectural software, the project uses a web-editor to create the
+            plans. The tech-stack consists of Unity Engine and Nuxt. Nuxt both
+            serves as the web-editor and the backend. The plans are loaded using
+            a REST-API, and a websocket is used to communicate updates to the
+            unity-client, so changes are reflected in real-time. Some
+            gamification is implemented, for example procedurally generated
+            labyrinths and collectible coins. The project is meant as a proof of
+            concept for VR / external interaction and was developed with fellow
+            students for uni.
           </ProjectCard>
         </Accordion>
 
@@ -222,8 +222,7 @@ File on Disk`}
             This is a tool which takes in JS, and then creates a Nassi
             Shneiderman Diagram based on the Source-Code. The functionality is
             limited to basic syntax, for example object-oriented js is not
-            supported. The tool is best used for visualizing computer-science
-            algorithms.
+            supported.
           </ProjectCard>
         </Accordion>
 
@@ -271,9 +270,9 @@ File on Disk`}
             title="Advent of Code 2023: Trying new Languages"
             CarouselKey="aoc2023"
           >
-            In 2023, i participated in the <a href="https://adventofcode.com/2023">Advent of Code</a>.
-            The goal was to use a different language for each day, to learn new languages and paradigms.
-            This prooved too time consuming, and i only made it to Day 10.
+            In 2023, I participated in the <a href="https://adventofcode.com/2023">Advent of Code</a>.
+            The goal was to use a different language for each day.
+            This proved too time consuming, and I only made it to Day 10.
           </ProjectCard>
         </Accordion>
 
@@ -285,7 +284,6 @@ File on Disk`}
           >
             This is my complete solution to the <a href="https://adventofcode.com/2024">Advent of Code 2024</a> in C++.
             The code is written in a functional style, using the STL and some custom algorithms.
-            In this semester i took a course on C++ in University. This was valuable practise for the practical exam, which i passed with a perfect score.
           </ProjectCard>
         </Accordion>
 
