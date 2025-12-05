@@ -194,6 +194,21 @@ File on Disk`}
           </ProjectCard>
         </Accordion>
 
+        <Accordion title="Chess Engine">
+          <ProjectCard
+            title="Chess Engine"
+            githubLink="https://github.com/fabsch225/Wombat"
+          >
+            This is a Chess Engine written in C++. It uses a bitboard
+            representation and a negamax search with alpha-beta pruning.
+            The engine also implements quiescence search, iterative deepening,
+            transposition tables and a simple evaluation function. The project is still
+            in development and can be found on GitHub, under the name "Wombat".
+            <a href="https://de.wikipedia.org/wiki/Wombats">Wombats</a> are really cute animals, and i 
+            imagine them to be pretty good at chess.
+          </ProjectCard>
+        </Accordion>
+
         <Accordion title="Unity: Visualizing Architectural Plans">
           <ProjectCard
             title="Architecture in VR"
@@ -265,6 +280,16 @@ File on Disk`}
           </ProjectCard>
         </Accordion>
 
+        <Accordion title="Advent of Code 2022 in APL" tabbed={true}>
+          <ProjectCard
+            title="Advent of Code 2022 in APL"
+            CarouselKey="aoc2022"
+          >
+            In 2022, I participated in the <a href="https://adventofcode.com/2022">Advent of Code</a>.
+            I used APL (A Programming Language) to solve the puzzles from Day 1 to 7.
+          </ProjectCard>
+        </Accordion>
+
         <Accordion title="Advent of Code 2023" tabbed={true}>
           <ProjectCard
             title="Advent of Code 2023: Trying new Languages"
@@ -284,6 +309,16 @@ File on Disk`}
           >
             This is my complete solution to the <a href="https://adventofcode.com/2024">Advent of Code 2024</a> in C++.
             The code is written in a functional style, using the STL and some custom algorithms.
+          </ProjectCard>
+        </Accordion>
+
+        <Accordion title="Advent of Code 2025" tabbed={true}>
+          <ProjectCard
+            title="Advent of Code 2025"
+            CarouselKey="aoc2025"
+          >
+            In 2025, I participated in the <a href="https://adventofcode.com/2025">Advent of Code</a>.
+            I used only functional programming languages to solve the puzzles.
           </ProjectCard>
         </Accordion>
 
