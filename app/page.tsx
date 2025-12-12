@@ -275,7 +275,7 @@ File on Disk`}
           >
             <p>
               The <a href="https://adventofcode.com/">Advent of Code</a> is an annual event where participants solve programming puzzles.
-              So far, i have participated in the years 2023 and 2024.
+              So far, i have participated in the years 2023 and 2024 and 2025. I did some experiments with the Challenges from 2022 also.
             </p>
           </ProjectCard>
         </Accordion>
@@ -286,7 +286,7 @@ File on Disk`}
             CarouselKey="aoc2022"
           >
             In 2022, I participated in the <a href="https://adventofcode.com/2022">Advent of Code</a>.
-            I used APL (A Programming Language) to solve the puzzles from Day 1 to 7.
+            I used <a href="https://en.wikipedia.org/wiki/APL_(programming_language)">APL (A Programming Language)</a> to solve the puzzles from Day 1 to 7.
           </ProjectCard>
         </Accordion>
 
@@ -316,9 +316,10 @@ File on Disk`}
           <ProjectCard
             title="Advent of Code 2025"
             CarouselKey="aoc2025"
+            githubLink="https://github.com/fabsch225/advent-2025"
           >
             In 2025, I participated in the <a href="https://adventofcode.com/2025">Advent of Code</a>.
-            I used only functional programming languages to solve the puzzles.
+            I used only functional programming languages to solve the puzzles. This Year, there were only 12 Days of Challenges.
           </ProjectCard>
         </Accordion>
 
