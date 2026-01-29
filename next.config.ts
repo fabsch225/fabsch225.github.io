@@ -1,4 +1,13 @@
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/abc',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
   output: 'export',
   images: {
     unoptimized: true,
