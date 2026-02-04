@@ -12,8 +12,8 @@ import Badge from '@components/Badge';
 
 export const dynamic = 'force-static';
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   
   const post = getPostBySlug(slug);
 
