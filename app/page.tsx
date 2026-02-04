@@ -134,7 +134,7 @@ export default function Portfolio() {
             </Button>
           </ButtonStack>
         </Row>
-        <Row><br/><Text>Below there are hobbyist programming projects I undertook during secondary school and uni. For professional experience, please refer to my CV.</Text></Row>
+        <Row><br/><Text>Below there are hobbyist and academic programming projects I undertook during secondary school and uni. For professional experience, please refer to my CV.</Text></Row>
       </Grid>
       <Grid>
       {openAccordions >= 2 && (
@@ -253,14 +253,25 @@ File on Disk`}
           </ProjectCard>
         </Accordion>
 
+        <Accordion title="Curve25519">
+          <ProjectCard
+            title="Curve25519 Implementation (ECDH, Java)"
+            githubLink="https://gist.github.com/fabsch225/a68ffebfa4e278be0eb6f721a7a6c37e"
+            CarouselKey="ecdh-curve25519"
+          >
+            I implemented the Curve25519 Elliptic Curve in Java, following a <a href="https://martin.kleppmann.com/papers/curve25519.pdf">tutorial-paper</a> by Martin Kleppmann.
+            In a seminar, i presented a mathematical proof of the correctness of the procedure (Associativity of the Group Law). The implementation supports the ECDH key-exchange and encryption.
+            The seminar-paper (in German) can be found <a href="https://www.dropbox.com/scl/fi/dj23bairk36xifb5n136n/Seminar_Thesis_ECC.pdf?rlkey=8j6kxokit980vxwe2kvz8hjbh&dl=0">here</a>.
+          </ProjectCard>
+        </Accordion>
+
         <Accordion title="Oauth Client from Scratch">
           <ProjectCard
             title="Oauth Client"
             githubLink="https://github.com/fabsch225/OAuth-Client-in-GO"
             CarouselKey="oauth"
           >
-            This is a simple Oauth Client in written Go. This was a demonstration for an accompanying
-            seminar presentation on the OAuth2.0 Protocol. I followed a microservice architecture, in so far as 
+            This is a simple Oauth Client in written Go. This was a demonstration for an accompanying <a href="https://www.dropbox.com/scl/fi/xy7twfo5k2jzq3ix7brm4/Oauth-2.pdf?rlkey=w401s2anw4hu7d0zwws48u9dm&dl=0">seminar presentation</a> on the OAuth2.0 Protocol. I followed a microservice architecture, in so far as 
             we seperate the buisness logic and the interface to an identity server (for example Authentik).
             In the repo, an example setup is included using Docker Compose.
             As per the microservice architecture, there are 3 components: Authentik, the Oauth client,
