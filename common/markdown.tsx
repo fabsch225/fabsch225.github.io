@@ -18,6 +18,32 @@ import ListItem from '@components/ListItem';
 import Row from '@root/components/Row';
 import Accordion from '@components/Accordion';
 
+// Helper function to process wiki-style links
+function processWikiLinks(content: string): string {
+  // Process image embeds: ![[image.png]] -> ![](image.png)
+  content = content.replace(/!\[\[([^\]]+)\]\]/g, (match, filename) => {
+    return `![](${filename})`;
+  });
+  
+  // Process internal links: [[path|title]] or [[path]]
+  content = content.replace(/\[\[([^\]]+)\]\]/g, (match, linkContent) => {
+    const parts = linkContent.split('|');
+    const path = parts[0].trim();
+    const title = parts[1]?.trim() || path;
+    
+    // Convert blog paths to URLs
+    if (path.startsWith('Blog/')) {
+      const slug = path.replace('Blog/', '').replace(/\s+/g, '-');
+      return `[${title}](/blog/${slug})`;
+    }
+    
+    // Default to the path with title
+    return `[${title}](${path})`;
+  });
+  
+  return content;
+}
+
 // Component mapping for markdown rendering
 export const components = {
   h1: ({ children, ...props }: any) => (
@@ -43,7 +69,7 @@ export const components = {
   code: ({ inline, className, children, ...props }: any) => {
     const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
-      <CodeBlock style={{ marginBottom: '1ch' }}>
+      <CodeBlock style={{ marginBottom: '1ch', overflowX: 'auto', maxWidth: '100%' }}>
         {String(children).replace(/\n$/, '')}
       </CodeBlock>
     ) : (
@@ -68,12 +94,12 @@ export const components = {
     </a>
   ),
   ul: ({ children, ...props }: any) => (
-    <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1ch' }} {...props}>
+    <ul style={{ marginBottom: '1ch' }} {...props}>
       {children}
     </ul>
   ),
   ol: ({ children, ...props }: any) => (
-    <ol style={{ listStyle: 'none', padding: 0, marginBottom: '1ch' }} {...props}>
+    <ol style={{ marginBottom: '1ch' }} {...props}>
       {children}
     </ol>
   ),
@@ -152,7 +178,7 @@ export const components = {
     );
   },
   table: ({ children, ...props }: any) => (
-    <div style={{ marginBottom: '1ch' }}>
+    <div style={{ marginBottom: '1ch', marginTop: '1ch'}}>
       <Table {...props}>
         {children}
       </Table>
@@ -172,6 +198,8 @@ export const components = {
   th: ({ children, ...props }: any) => (
     <TableColumn {...props}>
       {children}
+      <br />
+      <Divider />
     </TableColumn>
   ),
   td: ({ children, ...props }: any) => (
@@ -182,6 +210,20 @@ export const components = {
   hr: (props: any) => (
     <Divider type="GRADIENT" style={{ margin: '2ch 0' }} {...props} />
   ),
+  img: ({ src, alt, ...props }: any) => (
+    <img 
+      src={src} 
+      alt={alt || ''} 
+      style={{ 
+        maxWidth: '100%', 
+        height: 'auto',
+        marginBottom: '1ch',
+        marginTop: '1ch',
+        display: 'block'
+      }} 
+      {...props} 
+    />
+  ),
 };
 
 interface MarkdownRendererProps {
@@ -189,13 +231,16 @@ interface MarkdownRendererProps {
 }
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
+  // Preprocess wiki-style links
+  const processedContent = processWikiLinks(content);
+  
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm, remarkMath]}
       rehypePlugins={[rehypeKatex]}
       components={components}
     >
-      {content}
+      {processedContent}
     </ReactMarkdown>
   );
 }
