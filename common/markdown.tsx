@@ -47,19 +47,29 @@ function processWikiLinks(content: string): string {
 // Component mapping for markdown rendering
 export const components = {
   h1: ({ children, ...props }: any) => (
-    <h1 style={{ marginTop: '2ch', marginBottom: '1ch'}} {...props}>
+    <h1 style={{ marginTop: '3ch', marginBottom: '1ch'}} {...props}>
       {children}
     </h1>
   ),
   h2: ({ children, ...props }: any) => (
-    <h2 style={{ marginTop: '2ch', marginBottom: '1ch'}} {...props}>
+    <h2 style={{ marginTop: '3ch', marginBottom: '1ch'}} {...props}>
       {children}
     </h2>
   ),
   h3: ({ children, ...props }: any) => (
-    <h3 style={{ marginTop: '1.5ch', marginBottom: '0.5ch'}} {...props}>
+    <h3 style={{ marginTop: '2ch', marginBottom: '0.5ch'}} {...props}>
       {children}
     </h3>
+  ),
+   h4: ({ children, ...props }: any) => (
+    <h4 style={{ marginTop: '2ch', marginBottom: '0.5ch'}} {...props}>
+      {children}
+    </h4>
+  ),
+   h5: ({ children, ...props }: any) => (
+    <h5 style={{ marginTop: '2ch', marginBottom: '0.5ch'}} {...props}>
+      {children}
+    </h5>
   ),
   p: ({ children, ...props }: any) => (
     <Text style={{ marginBottom: '1ch', textAlign: 'justify' }} {...props}>
