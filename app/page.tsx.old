@@ -1009,7 +1009,7 @@ int main() {
               <ListItem>Year of the Five Emperors</ListItem>
             </ol>
             <br />
-            <ul>
+            A simple, declarative table component designed
               <ListItem>Book of Changes (The I Ching)</ListItem>
               <ListItem>The Analects</ListItem>
               <ListItem>Taoism</ListItem>

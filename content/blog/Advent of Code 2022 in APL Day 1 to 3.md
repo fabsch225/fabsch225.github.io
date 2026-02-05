@@ -10,7 +10,9 @@ tags:
 The [Advent of Code](https://adventofcode.com) is a yearly series of (christmas-themed) programming challenges. To learn a new programming languages, solving these is a great start; As i am doing here with APL.
 
 [APL](https://en.wikipedia.org/wiki/APL_(programming_language)) is a programming Language from the 60s, originally intended to replace mathematical syntax. For example, instead of a sum
+
 $$\sum_{k=1}^N \frac{1}{k^2}$$
+
 one would write
 ```APL
 +/1÷⍳N*2

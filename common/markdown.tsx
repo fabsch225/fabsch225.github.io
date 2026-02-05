@@ -241,7 +241,6 @@ interface MarkdownRendererProps {
 }
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
-  // Preprocess wiki-style links
   const processedContent = processWikiLinks(content);
   
   return (

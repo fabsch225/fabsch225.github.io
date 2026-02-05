@@ -28,7 +28,7 @@ import CodeBlock from '@root/components/CodeBlock';
 const cv_link = "https://www.dropbox.com/scl/fo/412zx36yzivnz03928t6h/AAUFRQ-MKoDo_CkxZYf3y4c?rlkey=l4b0r5mmzfr0p1mqqurx8jhkr&st=dlfpkqb0&dl=1";
 
 const ProjectCard = ({ title, children, githubLink = null, demoLink = null }: any) => (
-  <div style={{  marginTop: '1ch' }}>
+  <div style={{ marginTop: '1ch' }}>
     <Card style={{ textAlign: 'justify' }} title={title}>
       {children}
       <br></br>
@@ -65,6 +65,8 @@ function closeAllAccordions() {
 
 export default function Portfolio() {
   const [openAccordions, setOpenAccordions] = useState<number>(0);
+  const buttonStackRef = useRef<HTMLDivElement>(null);
+  const prevOpenAccordionsRef = useRef<number>(0);
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -89,18 +91,62 @@ export default function Portfolio() {
 
     const handleScroll = () => {
       const closeButton = document.getElementById('close-all-button');
-      if (closeButton) {
-        closeButton.style.top = `${window.scrollY + 20}px`;
+      const buttonStack = buttonStackRef.current;
+
+      if (closeButton && buttonStack) {
+        const buttonStackRect = buttonStack.getBoundingClientRect();
+        const buttonStackTop = buttonStackRect.top + window.scrollY;
+        const buttonStackRight = buttonStackRect.right;
+
+        // If button stack is above viewport, make it sticky at the top
+        if (buttonStackRect.top < 0) {
+          closeButton.style.position = 'fixed';
+          closeButton.style.top = '20px';
+          closeButton.style.left = `${buttonStackRight + 20}px`;
+        } else {
+          // Otherwise, position it aligned with the button stack
+          closeButton.style.position = 'absolute';
+          closeButton.style.top = `${buttonStackTop}px`;
+          closeButton.style.left = `${buttonStackRight + window.scrollX + 20}px`;
+        }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
     return () => {
       window.removeEventListener('click', countAccordions);
       darkModeMediaQuery.removeEventListener('change', themeChangeHandler);
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const prevCount = prevOpenAccordionsRef.current;
+    if (openAccordions === 2 && prevCount < 2) {
+      const closeButton = document.getElementById('close-all-button');
+      const buttonStack = buttonStackRef.current;
+
+      if (closeButton && buttonStack) {
+        const buttonStackRect = buttonStack.getBoundingClientRect();
+        const buttonStackTop = buttonStackRect.top + window.scrollY;
+        const buttonStackRight = buttonStackRect.right;
+
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = `${buttonStackTop}px`;
+        closeButton.style.left = `${buttonStackRight + window.scrollX + 20}px`;
+        closeButton.style.opacity = '0';
+        closeButton.style.height = buttonStackRect.height + 'px';
+
+        setTimeout(() => {
+          closeButton.style.opacity = '1';
+        }, 400);
+      }
+    }
+    prevOpenAccordionsRef.current = openAccordions;
+  }, [openAccordions]);
 
 
   return (
@@ -122,52 +168,55 @@ export default function Portfolio() {
           <Text>Student of Mathematics & Computer Science.</Text>
         </Row>
         <Row>
-          <ButtonStack>
-            <Button onClick={() => window.open(cv_link)}>
-              Download CV
-            </Button>
-            <Button onClick={() => window.open('https://github.com/fabsch225')}>
-              GitHub
-            </Button>
-            <Button onClick={() => window.open('https://www.linkedin.com/in/fabian-schuller/')}>
-              LinkedIn
-            </Button>
-          </ButtonStack>
+          <div ref={buttonStackRef}>
+            <ButtonStack>
+              <Button onClick={() => window.open(cv_link)}>
+                Download CV
+              </Button>
+              <Button onClick={() => window.open('https://github.com/fabsch225')}>
+                GitHub
+              </Button>
+              <Button onClick={() => window.open('https://www.linkedin.com/in/fabian-schuller/')}>
+                LinkedIn
+              </Button>
+            </ButtonStack>
+          </div>
         </Row>
-        <Row><br/><Text>Below there are hobbyist and academic programming projects I undertook during secondary school and uni. For professional experience, please refer to my CV.</Text></Row>
+        <Row><br /><Text>Below there are hobbyist and academic programming projects I undertook during secondary school and uni. For professional experience, please refer to my CV.</Text></Row>
       </Grid>
       <Grid>
-      {openAccordions >= 2 && (
-        <Button
-          id="close-all-button"
-          theme={"SECONDARY"}
-          onClick={closeAllAccordions}
-          style={{
-            marginTop: '1ch',
-            position: 'absolute',
-            top: '20px',
-            right: '20px',
-            fontSize: '0.8em',
-            padding: '0.5em 1em',
-            zIndex: 1000,
-            width: 'fit-content',
-          }}
-        >
-          Close All
-        </Button>
-      )}
+        {openAccordions >= 2 && (
+          <Button
+            id="close-all-button"
+            theme={"SECONDARY"}
+            onClick={closeAllAccordions}
+            style={{
+              position: 'absolute',
+              top: '0px',
+              left: '0px',
+              fontSize: '0.8em',
+              padding: '0.5em 1em',
+              zIndex: 1000,
+              width: 'fit-content',
+              opacity: 0,
+              transition: 'opacity 0.3s ease-in-out',
+            }}
+          >
+            Close All
+          </Button>
+        )}
         <Accordion title="SQLite Clone">
           <ProjectCard
             title="SQLite Clone"
             githubLink="https://github.com/fabsch225/rustql"
           >
             <p>During a Course on Databases, I got interested in the "internals" of
-            relational databases, like query-planning and
-            transaction-management. Therefore I started implementing a
-            rudimentary SQLite-clone in Rust. The database supports CRUD queries
-            and transactions, indices, views and permanent storage on disk. The architecture is strongly inspired by SQLite, for example
-            the database is stored in a single file, and the schema is stored in a system-table. <br />
-            Components:</p>
+              relational databases, like query-planning and
+              transaction-management. Therefore I started implementing a
+              rudimentary SQLite-clone in Rust. The database supports CRUD queries
+              and transactions, indices, views and permanent storage on disk. The architecture is strongly inspired by SQLite, for example
+              the database is stored in a single file, and the schema is stored in a system-table. <br />
+              Components:</p>
             <br />
             <CodeBlock>
               {`IO in/out
@@ -204,7 +253,7 @@ File on Disk`}
             The engine also implements quiescence search, iterative deepening,
             transposition tables and a simple evaluation function. The project is still
             in development and can be found on GitHub, under the name "Wombat".
-            <a href="https://de.wikipedia.org/wiki/Wombats">Wombats</a> are really cute animals, and i 
+            <a href="https://de.wikipedia.org/wiki/Wombats">Wombats</a> are really cute animals, and i
             imagine them to be pretty good at chess.
           </ProjectCard>
         </Accordion>
@@ -271,7 +320,7 @@ File on Disk`}
             githubLink="https://github.com/fabsch225/OAuth-Client-in-GO"
             CarouselKey="oauth"
           >
-            This is a simple Oauth Client in written Go. This was a demonstration for an accompanying <a href="https://www.dropbox.com/scl/fi/xy7twfo5k2jzq3ix7brm4/Oauth-2.pdf?rlkey=w401s2anw4hu7d0zwws48u9dm&dl=0">seminar presentation</a> on the OAuth2.0 Protocol. I followed a microservice architecture, in so far as 
+            This is a simple Oauth Client in written Go. This was a demonstration for an accompanying <a href="https://www.dropbox.com/scl/fi/xy7twfo5k2jzq3ix7brm4/Oauth-2.pdf?rlkey=w401s2anw4hu7d0zwws48u9dm&dl=0">seminar presentation</a> on the OAuth2.0 Protocol. I followed a microservice architecture, in so far as
             we seperate the buisness logic and the interface to an identity server (for example Authentik).
             In the repo, an example setup is included using Docker Compose.
             As per the microservice architecture, there are 3 components: Authentik, the Oauth client,
@@ -368,7 +417,7 @@ File on Disk`}
             CarouselKey="video-games-doom"
           >
             <p>This is a doom-clone, set in a zombie apocalypse. It can be finished
-            in an hour.</p> <br />
+              in an hour.</p> <br />
 
             <iframe frameBorder="0" src="https://itch.io/embed/2089147" width="552" height="167"><a href="https://fabsch225.itch.io/project-exctinction">Project Exctinction by fabsch225</a></iframe>
           </ProjectCard>

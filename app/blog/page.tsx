@@ -30,7 +30,7 @@ export default function BlogPage() {
       </h1>
       
       <Text style={{ marginBottom: '2ch', textAlign: 'justify' }}>
-        Welcome to the blog. Here you'll find articles about programming, mathematics, and technology.
+        Welcome to the blog. I'll share thoughts on programming and math.
       </Text>
 
       {randomPosts.length === 0 ? (
