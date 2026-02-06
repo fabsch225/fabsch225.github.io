@@ -221,7 +221,8 @@ export default function Portfolio() {
             <CodeBlock>
               {`IO in/out
 Parser -> Planner -> Executor
-B-Tree
+Dataframe
+Cursor -> B-Tree
 PagerFrontend <-> PagerAccessor <-> PagerCore
 File on Disk`}
             </CodeBlock>

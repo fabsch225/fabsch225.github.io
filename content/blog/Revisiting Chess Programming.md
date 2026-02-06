@@ -1,4 +1,5 @@
 ---
+date: 2025-11-02
 tags:
   - MyBlog/Learning
   - MyBlog/Chess

@@ -10,6 +10,7 @@ import Row from '@components/Row';
 import BreadCrumbs from '@components/BreadCrumbs';
 import Badge from '@components/Badge';
 import Accordion from '@components/Accordion';
+import BlogDarkMode from '@components/BlogDarkMode';
 
 export const dynamic = 'force-static';
 
@@ -19,7 +20,8 @@ export default function BlogPage() {
   const years = Object.keys(postsByYear).sort((a, b) => parseInt(b) - parseInt(a));
 
   return (
-    <DefaultLayout previewPixelSRC="/favicon.ico">
+    <BlogDarkMode>
+      <DefaultLayout previewPixelSRC="/favicon.ico">
       <BreadCrumbs items={[
         { name: 'Home', url: '/' },
         { name: 'Blog' }
@@ -96,5 +98,6 @@ export default function BlogPage() {
         </>
       )}
     </DefaultLayout>
+    </BlogDarkMode>
   );
 }

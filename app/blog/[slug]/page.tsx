@@ -9,6 +9,7 @@ import DefaultLayout from '@components/page/DefaultLayout';
 import Row from '@components/Row';
 import BreadCrumbs from '@components/BreadCrumbs';
 import Badge from '@components/Badge';
+import BlogDarkMode from '@components/BlogDarkMode';
 
 export const dynamic = 'force-static';
 
@@ -19,7 +20,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   if (!post) {
     return (
-      <DefaultLayout previewPixelSRC="/favicon.ico">
+      <BlogDarkMode>
+        <DefaultLayout previewPixelSRC="/favicon.ico">
         <BreadCrumbs items={[
           { name: 'Home', url: '/' },
           { name: 'Blog', url: '/blog' },
@@ -34,11 +36,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </Row>
         </Card>
       </DefaultLayout>
+      </BlogDarkMode>
     );
   }
 
   return (
-    <DefaultLayout previewPixelSRC="/favicon.ico">
+    <BlogDarkMode>
+      <DefaultLayout previewPixelSRC="/favicon.ico">
       <BreadCrumbs items={[
         { name: 'Home', url: '/' },
         { name: 'Blog', url: '/blog' },
@@ -70,6 +74,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <MarkdownRenderer content={post.content} />
       </div>
     </DefaultLayout>
+    </BlogDarkMode>
   );
 }
 
